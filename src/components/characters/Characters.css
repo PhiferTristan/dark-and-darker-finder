@@ -1,0 +1,55 @@
+.characters {
+  display: flex;
+  flex-direction: column;
+}
+
+.lfg-characters-container > h2 {
+  margin-top: 0;
+  align-items: center;
+}
+
+.character {
+  display: flex;
+  background-color: white;
+  border: 1px solid black;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}
+
+.character > * {
+  padding: 0.5rem;
+}
+
+.character-name {
+  display: flex;
+  border: 1px solid black;
+}
+
+.character-name:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+section.character {
+  margin: 3rem;
+}
+
+.character {
+  background-color: var(--white);
+  border: 1px solid var(--outline);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.character-info {
+  color: var(--info);
+  font-family: "Roboto", sans-serif;
+}
+
+.character-header {
+  font-size: larger;
+  font-weight: 700;
+  line-height: 3rem;
+  color: var(--primary);
+}
