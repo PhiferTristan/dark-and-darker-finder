@@ -4,10 +4,12 @@ import { LFGCharacterList } from "../components/characters/LFGCharacterList";
 import { FavoriteCharactersList } from "../components/characters/FavoriteCharactersList";
 import { MyCharacterList } from "../components/characters/MyCharacterList";
 import { MyProfile } from "../components/profiles/MyProfile";
-import { CharacterDetails } from "../components/characters/CharacterDetails";
+import { MyCharacterDetails } from "../components/characters/MyCharacterDetails";
 import { useEffect, useState } from "react";
 import { CreateCharacterForm } from "../components/forms/CreateCharacterForm";
 import { EditCharacter } from "../components/forms/EditCharacter";
+import { OthersCharacterList } from "../components/characters/OthersCharacterList";
+import { OthersCharacterDetails } from "../components/characters/OthersCharacterDetails";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -39,9 +41,16 @@ export const ApplicationViews = () => {
           element={<FavoriteCharactersList userId={userId} />}
         />
         <Route path="profile" element={<MyProfile />} />
+        <Route path="otherscharacters/:userId/">
+          <Route index element={<OthersCharacterList />} />
+          <Route
+            path=":characterId"
+            element={<OthersCharacterDetails userId={userId} />}
+          />
+        </Route>
         <Route path="mycharacters">
           <Route index element={<MyCharacterList userId={userId} />} />
-          <Route path=":characterId" element={<CharacterDetails />} />
+          <Route path=":characterId" element={<MyCharacterDetails />} />
           <Route
             path="newcharacter"
             element={<CreateCharacterForm userId={userId} />}

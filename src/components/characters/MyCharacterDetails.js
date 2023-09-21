@@ -46,19 +46,18 @@ export const MyCharacterDetails = () => {
     });
   }, [characterId]);
 
-  const deleteClick = (character) => {
-    deleteCharacter(character).then(() => {
-      navigate("/mycharacters");
-    });
-  };
-
   const user = users.find((user) => user.id === character.userId);
-
   const characterClass = classes.find((cls) => cls.id === character.classId);
   const characterLevel = levels.find((lvl) => lvl.id === character.levelId);
   const characterObjective = objectives.find(
     (obj) => obj.id === character.objectiveId
   );
+
+  const deleteClick = (character) => {
+    deleteCharacter(character).then(() => {
+      navigate(`/mycharacters`);
+    });
+  };
 
   return (
     <section className="character">
