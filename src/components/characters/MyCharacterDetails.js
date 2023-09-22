@@ -17,7 +17,7 @@ export const MyCharacterDetails = () => {
   const [levels, setLevels] = useState([]);
   const [objectives, setObjectives] = useState([]);
 
-  const { characterId } = useParams(); // { characterId: 3}
+  const { characterId } = useParams();
 
   const navigate = useNavigate();
 

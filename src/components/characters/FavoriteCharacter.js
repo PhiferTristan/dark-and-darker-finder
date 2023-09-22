@@ -7,7 +7,6 @@ export const FavoriteCharacter = ({
   levels,
   allUsers,
   favorites,
-  fetchFavoritesByUserId,
 }) => {
   const characterClass = classes?.find((cls) => cls.id === character.classId);
   const characterLevel = levels?.find((lvl) => lvl.id === character.levelId);
@@ -18,9 +17,9 @@ export const FavoriteCharacter = ({
   const navigate = useNavigate();
 
   const handleUnfavoriteClick = (favoriteId) => {
-  deleteFavorite(favoriteId);
-  navigate(0);
-  console.log(favoriteId);
+    deleteFavorite(favoriteId);
+    navigate(0);
+    console.log(favoriteId);
   };
 
   return (

@@ -9,13 +9,7 @@ import {
 } from "../../services/charactersService";
 
 export const EditCharacter = () => {
-  const [character, setCharacter] = useState({
-    // id: 0,
-    // name: "",
-    // classId: 0,
-    // levelId: 0,
-    // objectiveId: 0,
-  });
+  const [character, setCharacter] = useState({});
   const [classes, setClasses] = useState([]);
   const [levels, setLevels] = useState([]);
   const [objectives, setObjectives] = useState([]);

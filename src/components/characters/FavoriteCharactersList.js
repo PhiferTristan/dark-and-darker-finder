@@ -1,12 +1,6 @@
 import { useEffect, useState } from "react";
-import {
-  getFavoritesByUserId,
-  deleteFavorite,
-} from "../../services/favoriteService";
-import {
-  getAllCharacters,
-  getCharactersByUserId,
-} from "../../services/charactersService";
+import { getFavoritesByUserId } from "../../services/favoriteService";
+import { getAllCharacters } from "../../services/charactersService";
 import { FavoriteCharacter } from "./FavoriteCharacter";
 import { getClasses } from "../../services/classesService.js";
 import { getLevels } from "../../services/levelsService.js";
@@ -28,17 +22,11 @@ export const FavoriteCharactersList = ({ userId }) => {
     });
   }, [userId]);
 
-  // const fetchCharactersByUserId = () => {
-  //   getCharactersByUserId(userId).then((charactersByUserId) => {
-  //     setMyCharacters(charactersByUserId);
-  //   });
-  // };
-
   const fetchFavoritesByUserId = () => {
-  getFavoritesByUserId(userId).then((favoritesData) => {
-  const favoriteIds = favoritesData.map((favorite) => favorite.characterId);
-  setUserFavoriteCharacterIds(favoriteIds);
-  });
+    getFavoritesByUserId(userId).then((favoritesData) => {
+      const favoriteIds = favoritesData.map((favorite) => favorite.characterId);
+      setUserFavoriteCharacterIds(favoriteIds);
+    });
   };
 
   useEffect(() => {
@@ -69,16 +57,16 @@ export const FavoriteCharactersList = ({ userId }) => {
       <h2>Favorite Characters:</h2>
       <article className="favorites">
         {favoriteCharacters.map((character) => (
-            <FavoriteCharacter
-              character={character}
-              key={character.id}
-              classes={classes}
-              levels={levels}
-              allUsers={allUsers}
-              favorites={favorites}
+          <FavoriteCharacter
+            character={character}
+            key={character.id}
+            classes={classes}
+            levels={levels}
+            allUsers={allUsers}
+            favorites={favorites}
             fetchFavoritesByUserId={fetchFavoritesByUserId}
-            />
-          ))}
+          />
+        ))}
       </article>
     </div>
   );

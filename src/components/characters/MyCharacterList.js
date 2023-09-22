@@ -5,14 +5,11 @@ import { MyCharacter } from "./MyCharacter.js";
 import { getClasses } from "../../services/classesService.js";
 import { getLevels } from "../../services/levelsService.js";
 import { Link } from "react-router-dom";
-// import { getObjectives } from "../../services/objectivesService.js";
 
 export const MyCharacterList = ({ userId }) => {
   const [myCharacters, setMyCharacters] = useState([]);
   const [classes, setClasses] = useState([]);
   const [levels, setLevels] = useState([]);
-
-  // const characterObj = getCharacterByUserId(userId)
 
   useEffect(() => {
     getCharactersByUserId(userId).then((myCharactersArray) => {

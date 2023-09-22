@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import {
-  getCharacterById,
-} from "../../services/charactersService.js";
+import { getCharacterById } from "../../services/charactersService.js";
 import "./Characters.css";
 import { getAllUsers } from "../../services/usersService";
 import { getClasses } from "../../services/classesService";
@@ -16,7 +14,7 @@ export const CharacterDetails = () => {
   const [levels, setLevels] = useState([]);
   const [objectives, setObjectives] = useState([]);
 
-  const { characterId } = useParams(); // { characterId: 3}
+  const { characterId } = useParams();
 
   useEffect(() => {
     getAllUsers().then((usersArray) => {
@@ -35,7 +33,6 @@ export const CharacterDetails = () => {
       setObjectives(objectivesArray);
     });
   }, []);
-  
 
   useEffect(() => {
     getCharacterById(characterId).then((data) => {
