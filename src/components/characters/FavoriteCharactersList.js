@@ -1,12 +1,19 @@
 import { useEffect, useState } from "react";
-import { getFavoritesByUserId } from "../../services/favoriteService";
-import { getAllCharacters } from "../../services/charactersService";
+import {
+  getFavoritesByUserId,
+  deleteFavorite,
+} from "../../services/favoriteService";
+import {
+  getAllCharacters,
+  getCharactersByUserId,
+} from "../../services/charactersService";
 import { FavoriteCharacter } from "./FavoriteCharacter";
 import { getClasses } from "../../services/classesService.js";
 import { getLevels } from "../../services/levelsService.js";
 import { getAllUsers } from "../../services/usersService";
 
 export const FavoriteCharactersList = ({ userId }) => {
+  const [favorites, setFavorites] = useState([]);
   const [userFavoriteCharacterIds, setUserFavoriteCharacterIds] = useState([]);
   const [favoriteCharacters, setFavoriteCharacters] = useState([]);
   const [classes, setClasses] = useState([]);
@@ -14,11 +21,25 @@ export const FavoriteCharactersList = ({ userId }) => {
   const [allUsers, setAllUsers] = useState([]);
 
   useEffect(() => {
-    getFavoritesByUserId(userId).then((favorites) => {
-      const favoriteIds = favorites.map((favorite) => favorite.characterId);
+    getFavoritesByUserId(userId).then((favoritesData) => {
+      setFavorites(favoritesData);
+      const favoriteIds = favoritesData.map((favorite) => favorite.characterId);
       setUserFavoriteCharacterIds(favoriteIds);
     });
   }, [userId]);
+
+  // const fetchCharactersByUserId = () => {
+  //   getCharactersByUserId(userId).then((charactersByUserId) => {
+  //     setMyCharacters(charactersByUserId);
+  //   });
+  // };
+
+  const fetchFavoritesByUserId = () => {
+  getFavoritesByUserId(userId).then((favoritesData) => {
+  const favoriteIds = favoritesData.map((favorite) => favorite.characterId);
+  setUserFavoriteCharacterIds(favoriteIds);
+  });
+  };
 
   useEffect(() => {
     getAllCharacters().then((characters) => {
@@ -48,14 +69,16 @@ export const FavoriteCharactersList = ({ userId }) => {
       <h2>Favorite Characters:</h2>
       <article className="favorites">
         {favoriteCharacters.map((character) => (
-          <FavoriteCharacter
-            character={character}
-            key={character.id}
-            classes={classes}
-            levels={levels}
-            allUsers={allUsers}
-          />
-        ))}
+            <FavoriteCharacter
+              character={character}
+              key={character.id}
+              classes={classes}
+              levels={levels}
+              allUsers={allUsers}
+              favorites={favorites}
+            fetchFavoritesByUserId={fetchFavoritesByUserId}
+            />
+          ))}
       </article>
     </div>
   );
