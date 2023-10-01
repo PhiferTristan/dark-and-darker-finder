@@ -17,9 +17,15 @@ export const FavoriteCharacter = ({
   const navigate = useNavigate();
 
   const handleUnfavoriteClick = (favoriteId) => {
-    deleteFavorite(favoriteId);
-    navigate(0);
-    console.log(favoriteId);
+    const confirmed = window.confirm(
+      "Are you sure you want to unfavorite this character?"
+    );
+
+    if (confirmed) {
+      deleteFavorite(favoriteId);
+      navigate(0);
+      console.log(favoriteId);
+    }
   };
 
   return (
@@ -39,7 +45,13 @@ export const FavoriteCharacter = ({
       >
         Unfavorite?
       </button>
-      <div className={`character-active-status ${character.activeStatus ? 'active-status-active' : 'active-status-inactive'}`}>
+      <div
+        className={`character-active-status ${
+          character.activeStatus
+            ? "active-status-active"
+            : "active-status-inactive"
+        }`}
+      >
         {character.activeStatus ? "Active" : "Not Active"}
       </div>
     </section>

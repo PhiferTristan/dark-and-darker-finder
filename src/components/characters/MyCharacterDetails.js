@@ -54,47 +54,52 @@ export const MyCharacterDetails = () => {
   );
 
   const deleteClick = (character) => {
-    deleteCharacter(character).then(() => {
-      navigate(`/mycharacters`);
-    });
+    const confirmed = window.confirm(
+      "Are you positive you want to delete this character?"
+    );
+    if (confirmed) {
+      deleteCharacter(character).then(() => {
+        navigate(`/mycharacters`);
+      });
+    }
   };
 
   return (
     <>
-    <h1>My Character Details</h1>
-    <section className="character">
-      {/* <header className="character-header">{user?.username}</header> */}
-      <div>
-        <span className="character-info">Character Name: </span>
-        {character.name}
-      </div>
-      <div>
-        <span className="character-info">Character Class: </span>
-        {characterClass?.class}
-      </div>
-      <div>
-        <span className="character-info">Character Level: </span>
-        {characterLevel?.level}
-      </div>
-      <div>
-        <span className="character-info">Character Objective: </span>
-        {characterObjective?.objective}
-      </div>
-      <button
-        onClick={() => {
-          navigate(`/mycharacters/${character.id}/edit`);
-        }}
-        className="btn-edit-character"
-      >
-        Edit Character?
-      </button>
-      <button
-        className="btn-delete-character"
-        onClick={() => deleteClick(character)}
-      >
-        Delete Character?
-      </button>
-    </section>
+      <h1>My Character Details</h1>
+      <section className="character">
+        {/* <header className="character-header">{user?.username}</header> */}
+        <div>
+          <span className="character-info">Character Name: </span>
+          {character.name}
+        </div>
+        <div>
+          <span className="character-info">Character Class: </span>
+          {characterClass?.class}
+        </div>
+        <div>
+          <span className="character-info">Character Level: </span>
+          {characterLevel?.level}
+        </div>
+        <div>
+          <span className="character-info">Character Objective: </span>
+          {characterObjective?.objective}
+        </div>
+        <button
+          onClick={() => {
+            navigate(`/mycharacters/${character.id}/edit`);
+          }}
+          className="btn-edit-character"
+        >
+          Edit Character?
+        </button>
+        <button
+          className="btn-delete-character"
+          onClick={() => deleteClick(character)}
+        >
+          Delete Character?
+        </button>
+      </section>
     </>
   );
 };
