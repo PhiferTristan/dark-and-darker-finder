@@ -35,27 +35,31 @@ export const MyCharacterList = ({ userId }) => {
   }, []);
 
   return (
-    <div className="my-characters-container">
-      <h2>My Character List:</h2>
-      <Link className="add-character-link" to="/mycharacters/newcharacter">
-        <button className="add-character-btn" onClick={() => {}}>
-          Add Character
-        </button>
-      </Link>
+    <>
+      <body className="my-characters-list-body">
+        <div className="my-characters-container">
+          <h2>My Character List:</h2>
+          <Link className="add-character-link" to="/mycharacters/newcharacter">
+            <button className="add-character-btn" onClick={() => {}}>
+              Add Character
+            </button>
+          </Link>
 
-      <article className="my-characters-container">
-        {myCharacters.map((character) => {
-          return (
-            <MyCharacter
-              character={character}
-              classes={classes}
-              levels={levels}
-              fetchCharactersByUserId={fetchCharactersByUserId}
-              key={character.id}
-            />
-          );
-        })}
-      </article>
-    </div>
+          <article className="my-characters-container">
+            {myCharacters.map((character) => {
+              return (
+                <MyCharacter
+                  character={character}
+                  classes={classes}
+                  levels={levels}
+                  fetchCharactersByUserId={fetchCharactersByUserId}
+                  key={character.id}
+                />
+              );
+            })}
+          </article>
+        </div>
+      </body>
+    </>
   );
 };

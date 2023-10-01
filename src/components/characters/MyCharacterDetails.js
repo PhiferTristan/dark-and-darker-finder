@@ -60,22 +60,24 @@ export const MyCharacterDetails = () => {
   };
 
   return (
+    <>
+    <h1>My Character Details</h1>
     <section className="character">
-      <header className="character-header">{user?.username}</header>
+      {/* <header className="character-header">{user?.username}</header> */}
       <div>
-        <span className="character-info">Character Name : </span>
+        <span className="character-info">Character Name: </span>
         {character.name}
       </div>
       <div>
-        <span className="character-info">Character Class : </span>
+        <span className="character-info">Character Class: </span>
         {characterClass?.class}
       </div>
       <div>
-        <span className="character-info">Character Level : </span>
+        <span className="character-info">Character Level: </span>
         {characterLevel?.level}
       </div>
       <div>
-        <span className="character-info">Character Objective : </span>
+        <span className="character-info">Character Objective: </span>
         {characterObjective?.objective}
       </div>
       <button
@@ -93,5 +95,6 @@ export const MyCharacterDetails = () => {
         Delete Character?
       </button>
     </section>
+    </>
   );
 };

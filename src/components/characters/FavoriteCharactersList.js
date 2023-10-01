@@ -53,9 +53,11 @@ export const FavoriteCharactersList = ({ userId }) => {
   }, []);
 
   return (
+    <>
+    <body className="favorite-list-body">
     <div className="favorite-characters-container">
       <h2>Favorite Characters:</h2>
-      <article className="favorites">
+      <article className="characters">
         {favoriteCharacters.map((character) => (
           <FavoriteCharacter
             character={character}
@@ -69,5 +71,7 @@ export const FavoriteCharactersList = ({ userId }) => {
         ))}
       </article>
     </div>
+    </body>
+    </>
   );
 };
