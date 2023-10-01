@@ -32,9 +32,14 @@ export const MyCharacter = ({
   }, [character]);
 
   const deleteClick = (character) => {
-    deleteCharacter(character).then(() => {
-      fetchCharactersByUserId();
-    });
+    const confirmed = window.confirm(
+      "Are you positive you want to delete this character?"
+    );
+    if (confirmed) {
+      deleteCharacter(character).then(() => {
+        fetchCharactersByUserId();
+      });
+    }
   };
 
   const characterClass = classes.find((cls) => cls.id === character.classId);
@@ -54,7 +59,13 @@ export const MyCharacter = ({
           Toggle Active Status
         </button>
       </div>
-      <div className={`character-active-status ${character.activeStatus ? 'active-status-active' : 'active-status-inactive'}`}>
+      <div
+        className={`character-active-status ${
+          character.activeStatus
+            ? "active-status-active"
+            : "active-status-inactive"
+        }`}
+      >
         {character.activeStatus ? "Active" : "Not Active"}
       </div>
       <div className="character-info">{characterClass?.class}</div>

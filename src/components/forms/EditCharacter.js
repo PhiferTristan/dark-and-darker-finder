@@ -38,7 +38,7 @@ export const EditCharacter = () => {
     });
   }, [characterId]);
 
-  const handleSave = (event) => {
+  const handleSaveClick = (event) => {
     event.preventDefault();
 
     const updatedCharacter = {
@@ -52,9 +52,15 @@ export const EditCharacter = () => {
     };
     console.log(updatedCharacter);
 
-    editCharacter(updatedCharacter).then(() => {
-      navigate(`/mycharacters`);
-    });
+    const confirmed = window.confirm(
+      "Are you sure you want to save these changes?"
+    );
+
+    if (confirmed) {
+      editCharacter(updatedCharacter).then(() => {
+        navigate(`/mycharacters`);
+      });
+    }
   };
 
   return (
@@ -147,7 +153,7 @@ export const EditCharacter = () => {
           </select>
         </div>
       </fieldset>
-      <button className="btn" onClick={handleSave}>
+      <button className="btn" onClick={handleSaveClick}>
         Save Edits
       </button>
     </form>
