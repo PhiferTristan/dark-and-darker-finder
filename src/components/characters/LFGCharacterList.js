@@ -50,38 +50,42 @@ export const LFGCharacterList = () => {
   };
 
   return (
-    <div className="lfg-characters-container">
-      <h2>LFG List:</h2>
-      <select
-        className="class-dropdown"
-        value={selectedClassFilter}
-        onChange={handleClassFilterChange}
-      >
-        <option value="0">All Classes</option>
-        {classes.map((classObj) => {
-          return (
-            <option value={classObj.id} key={classObj.id}>
-              {classObj.class}
-            </option>
-          );
-        })}
-      </select>
-      <button className="filter-btn" onClick={toggleActiveCharacters}>
-        {showActiveOnly ? "All Characters" : "Active"}
-      </button>
-      <article className="characters">
-        {filteredCharacters.map((character) => {
-          return (
-            <LFGCharacter
-              character={character}
-              key={character.id}
-              classes={classes}
-              levels={levels}
-              allUsers={allUsers}
-            />
-          );
-        })}
-      </article>
-    </div>
+    <>
+      <body className="lfg-list-body">
+        <div className="lfg-characters-container">
+          <h2 className="lfg-list-header">Looking for Group List:</h2>
+          <select
+            className="class-dropdown"
+            value={selectedClassFilter}
+            onChange={handleClassFilterChange}
+          >
+            <option value="0">All Classes</option>
+            {classes.map((classObj) => {
+              return (
+                <option value={classObj.id} key={classObj.id}>
+                  {classObj.class}
+                </option>
+              );
+            })}
+          </select>
+          <button className="filter-btn" onClick={toggleActiveCharacters}>
+            {showActiveOnly ? "All Characters" : "Active"}
+          </button>
+          <article className="characters">
+            {filteredCharacters.map((character) => {
+              return (
+                <LFGCharacter
+                  character={character}
+                  key={character.id}
+                  classes={classes}
+                  levels={levels}
+                  allUsers={allUsers}
+                />
+              );
+            })}
+          </article>
+        </div>
+      </body>
+    </>
   );
 };

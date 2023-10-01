@@ -40,7 +40,7 @@ export const MyCharacter = ({
   const characterClass = classes.find((cls) => cls.id === character.classId);
   const characterLevel = levels.find((lvl) => lvl.id === character.levelId);
   return (
-    <section key={character.id} className="character">
+    <section key={character.id} className="my-character-listing">
       <div
         onClick={() => {
           navigate(`/mycharacters/${character.id}`);
@@ -54,11 +54,11 @@ export const MyCharacter = ({
           Toggle Active Status
         </button>
       </div>
-      <div className="character-active-status">
+      <div className={`character-active-status ${character.activeStatus ? 'active-status-active' : 'active-status-inactive'}`}>
         {character.activeStatus ? "Active" : "Not Active"}
       </div>
-      <div className="character-class">{characterClass?.class}</div>
-      <div className="character-level">Level: {characterLevel?.level}</div>
+      <div className="character-info">{characterClass?.class}</div>
+      <div className="character-info">Level: {characterLevel?.level}</div>
       <button
         onClick={() => {
           navigate(`/mycharacters/${character.id}/edit`);

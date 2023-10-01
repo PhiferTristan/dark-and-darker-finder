@@ -11,7 +11,7 @@
   flex-basis: 20%;
   list-style-type: none;
   text-align: center;
-  color: var(--offWhite);
+  color: var(--primary);
 }
 
 .navbar-link {

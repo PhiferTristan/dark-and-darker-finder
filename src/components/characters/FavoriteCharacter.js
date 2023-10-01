@@ -23,23 +23,23 @@ export const FavoriteCharacter = ({
   };
 
   return (
-    <section key={character.id} className="character">
+    <section key={character.id} className="favorite-character-listing">
       {/* <div className="character-info">#{character.id}</div> */}
       <Link to={`/otherscharacters/${character.userId}/${character.id}`}>
         <div className="character-name">{character.name}</div>
       </Link>
       <Link to={`/otherscharacters/${character.userId}`}>
-        <div className="username">User: {characterUser?.username}</div>
+        <div className="character-info">User: {characterUser?.username}</div>
       </Link>
-      <div className="character-class">{characterClass?.class}</div>
-      <div className="character-level">Level: {characterLevel?.level}</div>
+      <div className="character-info">{characterClass?.class}</div>
+      <div className="character-info">Level: {characterLevel?.level}</div>
       <button
         className="btn-unfavorite-character"
         onClick={() => handleUnfavoriteClick(favorite.id)}
       >
         Unfavorite?
       </button>
-      <div className="character-active-status">
+      <div className={`character-active-status ${character.activeStatus ? 'active-status-active' : 'active-status-inactive'}`}>
         {character.activeStatus ? "Active" : "Not Active"}
       </div>
     </section>

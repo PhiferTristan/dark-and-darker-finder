@@ -39,22 +39,26 @@ export const OthersCharacterList = () => {
   }, [userId]);
 
   return (
-    <div className="others-characters-container">
-      <h2>{username}s List:</h2>
+    <>
+      <body className="others-characters-list-body">
+        <div className="others-characters-container">
+          <h2 className="others-characters-header">{username}'s Character List:</h2>
 
-      <article className="others-characters-container">
-        {usersCharacters.map((character) => {
-          return (
-            <OthersCharacter
-              character={character}
-              classes={classes}
-              levels={levels}
-              key={character.id}
-              allUsers={allUsers}
-            />
-          );
-        })}
-      </article>
-    </div>
+          <article className="characters">
+            {usersCharacters.map((character) => {
+              return (
+                <OthersCharacter
+                  character={character}
+                  classes={classes}
+                  levels={levels}
+                  key={character.id}
+                  allUsers={allUsers}
+                />
+              );
+            })}
+          </article>
+        </div>
+      </body>
+    </>
   );
 };
