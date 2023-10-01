@@ -10,9 +10,9 @@ export const NavBar = () => {
       <li className="navbar-item">
         <Link to="/hub">Hub</Link>
       </li>
-      {/* <li className="navbar-item">
+      <li className="navbar-item">
         <Link to="/profile">Profile</Link>
-      </li> */}
+      </li>
       <li className="navbar-item">
         <Link to="/mycharacters">My Characters</Link>
       </li>

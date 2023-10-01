@@ -3,7 +3,7 @@ import { getCharactersByUserId } from "../../services/charactersService.js";
 import "./Characters.css";
 import { getClasses } from "../../services/classesService.js";
 import { getLevels } from "../../services/levelsService.js";
-import { getAllUsers } from "../../services/usersService.js";
+import { getAllUsers, getUserByUserId } from "../../services/usersService.js";
 import { OthersCharacter } from "./OthersCharacter.js";
 import { useParams } from "react-router-dom";
 
@@ -12,6 +12,7 @@ export const OthersCharacterList = () => {
   const [allUsers, setAllUsers] = useState([]);
   const [classes, setClasses] = useState([]);
   const [levels, setLevels] = useState([]);
+  const [username, setUsername] = useState("");
 
   const { userId } = useParams();
 
@@ -31,11 +32,15 @@ export const OthersCharacterList = () => {
     getAllUsers().then((usersArray) => {
       setAllUsers(usersArray);
     });
-  }, []);
+
+    getUserByUserId(userId).then((user) => {
+      setUsername(user.username);
+    });
+  }, [userId]);
 
   return (
     <div className="others-characters-container">
-      <h2>{userId.username}s List:</h2>
+      <h2>{username}s List:</h2>
 
       <article className="others-characters-container">
         {usersCharacters.map((character) => {
