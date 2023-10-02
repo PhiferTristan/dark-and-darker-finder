@@ -74,12 +74,12 @@ export const MyCharacter = ({
         onClick={() => {
           navigate(`/mycharacters/${character.id}/edit`);
         }}
-        className="btn-edit-character"
+        className="btn-edit-char"
       >
         Edit Character?
       </button>
       <button
-        className="btn-delete-character"
+        className="btn-delete-char"
         onClick={() => deleteClick(character)}
       >
         Delete Character?
