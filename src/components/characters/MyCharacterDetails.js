@@ -71,20 +71,20 @@ export const MyCharacterDetails = () => {
         <section className="my-character-details">
           {/* <header className="character-header">{user?.username}</header> */}
           <div>
-            <span className="character-info">Character Name: </span>
-            {character.name}
+            <p className="character-info">Character Name: {character.name}</p>
+            
           </div>
           <div>
-            <span className="character-info">Character Class: </span>
-            {characterClass?.class}
+            <p className="character-info">Character Class: {characterClass?.class}</p>
+            
           </div>
           <div>
-            <span className="character-info">Character Level: </span>
-            {characterLevel?.level}
+            <p className="character-info">Character Level: {characterLevel?.level}</p>
+            
           </div>
           <div>
-            <span className="character-info">Character Objective: </span>
-            {characterObjective?.objective}
+            <p className="character-info">Character Objective: {characterObjective?.objective}</p>
+            
           </div>
           <button
             onClick={() => {

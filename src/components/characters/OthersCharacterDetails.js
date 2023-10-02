@@ -66,23 +66,23 @@ export const OthersCharacterDetails = ({ userId }) => {
     <section className="others-character-details">
       {/* <header className="character-header">User: {user?.username}</header> */}
       <div>
-        <span className="character-info">Character Name : </span>
-        {character.name}
+        <p className="character-info">Character Name : {character.name}</p>
+        
       </div>
       <div>
-        <span className="character-info">Character Class : </span>
-        {characterClass?.class}
+        <p className="character-info">Character Class : {characterClass?.class}</p>
+        
       </div>
       <div>
-        <span className="character-info">Character Level : </span>
-        {characterLevel?.level}
+        <p className="character-info">Character Level : {characterLevel?.level}</p>
+        
       </div>
       <div>
-        <span className="character-info">Character Objective : </span>
-        {characterObjective?.objective}
+        <p className="character-info">Character Objective : {characterObjective?.objective}</p>
+        
       </div>
       {!favorited ? (
-        <button onClick={handleFavoriteClick}>Favorite</button>
+        <button className="btn-favorite-character" onClick={handleFavoriteClick}>Favorite</button>
         ) : (
           <span>Favorited</span>
           )}

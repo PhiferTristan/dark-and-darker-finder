@@ -10,6 +10,7 @@ import { CreateCharacterForm } from "../components/forms/CreateCharacterForm";
 import { EditCharacter } from "../components/forms/EditCharacter";
 import { OthersCharacterList } from "../components/characters/OthersCharacterList";
 import { OthersCharacterDetails } from "../components/characters/OthersCharacterDetails";
+import { OthersProfile } from "../components/profiles/OthersProfile";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -40,7 +41,10 @@ export const ApplicationViews = () => {
           path="favorites"
           element={<FavoriteCharactersList userId={userId} />}
         />
-        <Route path="profile" element={<MyProfile />} />
+        <Route path="profile" element={<MyProfile userId={userId} />} />
+        {/* <Route path="othersprofile/:userId">
+          <Route index element={<OthersProfile />} />
+        </Route> */}
         <Route path="otherscharacters/:userId/">
           <Route index element={<OthersCharacterList />} />
           <Route

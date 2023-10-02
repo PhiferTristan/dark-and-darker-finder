@@ -24,7 +24,6 @@ export const FavoriteCharacter = ({
     if (confirmed) {
       deleteFavorite(favoriteId);
       navigate(0);
-      console.log(favoriteId);
     }
   };
 
