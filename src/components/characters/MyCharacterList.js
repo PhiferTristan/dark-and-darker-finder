@@ -38,7 +38,7 @@ export const MyCharacterList = ({ userId }) => {
     <>
       <body className="my-characters-list-body">
         <div className="my-characters-container">
-          <h2>My Character List:</h2>
+          <h2 className="my-characters-list-header">My Character List:</h2>
           <Link className="add-character-link" to="/mycharacters/newcharacter">
             <button className="add-character-btn" onClick={() => {}}>
               Add Character

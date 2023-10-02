@@ -42,7 +42,7 @@ export const OthersCharacterList = () => {
     <>
       <body className="others-characters-list-body">
         <div className="others-characters-container">
-          <h2 className="others-characters-header">{username}'s Character List:</h2>
+          <h2 className="others-characters-list-header">{username}'s Character List:</h2>
 
           <article className="characters">
             {usersCharacters.map((character) => {

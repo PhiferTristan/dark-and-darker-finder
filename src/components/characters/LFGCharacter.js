@@ -18,10 +18,10 @@ export const LFGCharacter = ({ character, classes, levels, allUsers }) => {
     <section key={character.id} className="lfg-character-listing">
       {/* <div className="character-info">#{character.id}</div> */}
       <Link to={destinationURL}>
-        <div className="character-info">{character.name}</div>
+        <div className="character-info-button">{character.name}</div>
       </Link>
       <Link to={`/otherscharacters/${character.userId}`}>
-        <div className="character-info">User: {characterUser?.username}</div>
+        <div className="character-info-button">User: {characterUser?.username}</div>
       </Link>
       <div className="character-info">Class: {characterClass?.class}</div>
       <div className="character-info">Level: {characterLevel?.level}</div>

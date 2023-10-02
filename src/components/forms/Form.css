@@ -1,0 +1,12 @@
+.form-header {
+  display: flex;
+  justify-content: center;
+  color: var(--primary);
+}
+
+.form-group {
+    color: var(--primary);
+  font-family: "Roboto", sans-serif;
+  align-items: center;
+  margin: 3rem;
+}

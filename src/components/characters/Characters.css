@@ -10,20 +10,27 @@
 .lfg-list-header {
   display: flex;
   justify-content: center;
+  color: var(--primary);
 }
 
 .lfg-characters-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 800px;
+  margin: 0 auto
 }
 
 .lfg-character-listing {
   display: flex;
   background-color: var(--appBackground);
-  border: 1px solid var(--outline);
+  border: 1px solid rgb(41, 1, 43);
   border-radius: 0.5rem;
   padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 4px 4px 2px -2px rgba(0,0,0,0.4);
+  width: 100%;
+  align-items: center;
 }
 
 
@@ -57,6 +64,14 @@ section.character {
   margin: 3rem;
 }
 
+.character-info-button {
+  color: var(--primary);
+  font-family: "Roboto", sans-serif;
+  align-items: center;
+  margin: 3rem;
+  border: 1px solid var(--primary)
+}
+
 .character-header {
   font-size: larger;
   font-weight: 700;
@@ -74,7 +89,7 @@ section.character {
 }
 
 .active-status-inactive {
-  color: red;
+  color: rgb(246, 76, 76);
 }
 
 .my-characters-list-body {
@@ -84,6 +99,17 @@ section.character {
 .my-characters-list-header {
   display: flex;
   justify-content: center;
+  color: var(--primary);
+}
+
+.details-header {
+  display: flex;
+  justify-content: center;
+  color: var(--primary);
+}
+
+.details-container {
+  
 }
 
 .my-characters-container {
@@ -95,9 +121,26 @@ section.character {
 .my-character-listing {
   display: flex;
   background-color: var(--appBackground);
-  border: 1px solid var(--outline);
+  border: 1px solid rgb(41, 1, 43);
   border-radius: 0.5rem;
   padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 4px 4px 2px -2px rgba(0,0,0,0.4);
+  width: 100%;
+  align-items: center;
+}
+
+.my-character-details {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--appBackground);
+  border: 1px solid rgb(41, 1, 43);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 4px 4px 2px -2px rgba(0,0,0,0.4);
+  width: 100%;
+  align-items: center;
 }
 
 .others-characters-list-body {
@@ -107,6 +150,7 @@ section.character {
 .others-characters-list-header {
   display: flex;
   justify-content: center;
+  color: var(--primary);
 }
 
 .others-characters-container {
@@ -118,9 +162,26 @@ section.character {
 .others-character-listing {
   display: flex;
   background-color: var(--appBackground);
-  border: 1px solid var(--outline);
+  border: 1px solid rgb(41, 1, 43);
   border-radius: 0.5rem;
   padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 4px 4px 2px -2px rgba(0,0,0,0.4);
+  width: 100%;
+  align-items: center;
+}
+
+.others-character-details {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--appBackground);
+  border: 1px solid rgb(41, 1, 43);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 4px 4px 2px -2px rgba(0,0,0,0.4);
+  width: 100%;
+  align-items: center;
 }
 
 
@@ -132,6 +193,7 @@ section.character {
 .favorite-list-header {
   display: flex;
   justify-content: center;
+  color: var(--primary);
 }
 
 .favorite-characters-container {
@@ -143,7 +205,11 @@ section.character {
 .favorite-character-listing {
   display: flex;
   background-color: var(--appBackground);
-  border: 1px solid var(--outline);
+  border: 1px solid rgb(41, 1, 43);
   border-radius: 0.5rem;
   padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 4px 4px 2px -2px rgba(0,0,0,0.4);
+  width: 100%;
+  align-items: center;
 }

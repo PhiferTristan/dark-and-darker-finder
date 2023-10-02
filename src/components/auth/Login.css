@@ -1,12 +1,31 @@
 .auth-container {
-  border: 1px solid gray;
+  border: 1px solid rgb(41, 1, 43);
   margin: 3rem 15rem;
   padding: 2rem;
   border-radius: 1rem;
+  box-shadow: 4px 4px 2px -2px rgba(0,0,0,0.4)
 }
 
 .header {
-  font-size: 2rem;
+  font-size: 4rem;
+  color: var(--primary);
+  font-family: "Roboto", sans-serif;
+  align-items: center;
+  margin: 3rem;
+}
+
+.h1 {
+  color: var(--primary);
+  font-family: "Roboto", sans-serif;
+  align-items: center;
+  margin: 3rem;
+}
+
+.h2 {
+  color: var(--primary);
+  font-family: "Roboto", sans-serif;
+  align-items: center;
+  margin: 3rem;
 }
 
 .auth-form {
@@ -21,8 +40,13 @@
 
 .register-link {
   text-align: center;
+  color: var(--primary);
+  font-family: "Roboto", sans-serif;
+  align-items: center;
+  margin: 3rem;
 }
 
 .auth-fieldset {
   margin: 0.25rem 0rem;
+  
 }

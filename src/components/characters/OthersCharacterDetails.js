@@ -61,8 +61,9 @@ export const OthersCharacterDetails = ({ userId }) => {
 
   return (
       <>
-      <h1 className="others-list-header">{user?.username}'s Character</h1>
-    <section className="others-character-listing">
+      <h1 className="details-header">{user?.username}'s Character</h1>
+      <div className="details-container">
+    <section className="others-character-details">
       {/* <header className="character-header">User: {user?.username}</header> */}
       <div>
         <span className="character-info">Character Name : </span>
@@ -86,6 +87,7 @@ export const OthersCharacterDetails = ({ userId }) => {
           <span>Favorited</span>
           )}
     </section>
+    </div>
     </>
   );
 };

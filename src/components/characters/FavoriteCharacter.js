@@ -32,7 +32,7 @@ export const FavoriteCharacter = ({
     <section key={character.id} className="favorite-character-listing">
       {/* <div className="character-info">#{character.id}</div> */}
       <Link to={`/otherscharacters/${character.userId}/${character.id}`}>
-        <div className="character-name">{character.name}</div>
+        <div className="character-info-button">{character.name}</div>
       </Link>
       <Link to={`/otherscharacters/${character.userId}`}>
         <div className="character-info">User: {characterUser?.username}</div>

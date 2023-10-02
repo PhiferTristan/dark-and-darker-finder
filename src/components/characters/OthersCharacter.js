@@ -9,7 +9,7 @@ export const OthersCharacter = ({ character, classes, levels, allUsers }) => {
     <section key={character.id} className="others-character-listing">
       {/* <div className="character-info">#{character.id}</div> */}
       <Link to={`/otherscharacters/${character.userId}/${character.id}`}>
-        <div className="character-info">{character.name}</div>
+        <div className="character-info-button">{character.name}</div>
       </Link>
       <div className="character-info">Class: {characterClass?.class}</div>
       <div className="character-info">Level: {characterLevel?.level}</div>

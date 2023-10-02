@@ -50,7 +50,7 @@ export const MyCharacter = ({
         onClick={() => {
           navigate(`/mycharacters/${character.id}`);
         }}
-        className="character-name"
+        className="character-info-button"
       >
         {character.name}
       </div>

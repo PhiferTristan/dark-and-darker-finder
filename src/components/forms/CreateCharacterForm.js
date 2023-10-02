@@ -4,6 +4,7 @@ import { getClasses } from "../../services/classesService";
 import { getLevels } from "../../services/levelsService";
 import { getObjectives } from "../../services/objectivesService";
 import { postCharacter } from "../../services/charactersService";
+import "./Form.css"
 
 export const CreateCharacterForm = ({ userId }) => {
   const [classes, setClasses] = useState([]);
@@ -59,9 +60,11 @@ export const CreateCharacterForm = ({ userId }) => {
   };
 
   return (
+    <>
+    <div className="form-container">
     <form className="character-form">
-      <h2 className="character-form-title">
-        Add a character to your character list
+      <h2 className="form-header">
+        Create a Character
       </h2>
       <fieldset>
         <div className="form-group">
@@ -137,5 +140,7 @@ export const CreateCharacterForm = ({ userId }) => {
         Create Character
       </button>
     </form>
+    </div>
+    </>
   );
 };

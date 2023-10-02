@@ -7,6 +7,8 @@ import {
   editCharacter,
   getCharacterById,
 } from "../../services/charactersService";
+import "./Form.css"
+
 
 export const EditCharacter = () => {
   const [character, setCharacter] = useState({});
@@ -64,8 +66,10 @@ export const EditCharacter = () => {
   };
 
   return (
+    <>
+    <div>
     <form className="character-form">
-      <h2 className="character-form-title">Edit character</h2>
+      <h2 className="form-header">Edit character</h2>
       <fieldset>
         <div className="form-group">
           <label htmlFor="name">Name:</label>
@@ -157,5 +161,7 @@ export const EditCharacter = () => {
         Save Edits
       </button>
     </form>
+    </div>
+    </>
   );
 };
