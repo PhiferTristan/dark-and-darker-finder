@@ -64,7 +64,7 @@ export const OthersCharacterDetails = ({ userId }) => {
       <h1 className="details-header">{user?.username}'s Character</h1>
       <div className="details-container">
     <section className="others-character-details">
-      {/* <header className="character-header">User: {user?.username}</header> */}
+    <img src={characterClass?.imgUrl} alt={characterClass?.class} className="class-img" />
       <div>
         <p className="character-info">Character Name : {character.name}</p>
         

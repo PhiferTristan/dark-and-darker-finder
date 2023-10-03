@@ -66,9 +66,10 @@ export const CreateCharacterForm = ({ userId }) => {
       <h2 className="form-header">
         Create a Character
       </h2>
-      <fieldset>
+      <div className="fields-container">
+      <fieldset className="field-container">
         <div className="form-group">
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name">Name: </label>
           <input
             value={newCharacter.name}
             name="name"
@@ -79,7 +80,7 @@ export const CreateCharacterForm = ({ userId }) => {
           />
         </div>
       </fieldset>
-      <fieldset>
+      <fieldset className="field-container">
         <div className="form-group">
           <div>Class:</div>
           <select
@@ -98,7 +99,7 @@ export const CreateCharacterForm = ({ userId }) => {
           </select>
         </div>
       </fieldset>
-      <fieldset>
+      <fieldset className="field-container">
         <div className="form-group">
           <div>Level:</div>
           <select
@@ -117,7 +118,7 @@ export const CreateCharacterForm = ({ userId }) => {
           </select>
         </div>
       </fieldset>
-      <fieldset>
+      <fieldset className="field-container">
         <div className="form-group">
           <div>Objective:</div>
           <select
@@ -136,9 +137,10 @@ export const CreateCharacterForm = ({ userId }) => {
           </select>
         </div>
       </fieldset>
-      <button className="btn" onClick={handleSave}>
+      <button className="create-button" onClick={handleSave}>
         Create Character
       </button>
+      </div>
     </form>
     </div>
     </>

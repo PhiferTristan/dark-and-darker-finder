@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Quicksand&family=Roboto:wght@100&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+/* @font-face {
+  src: url(/c:\Users\phife\Desktop\font\Solmoe KimDaeGeonOTF Light\Solmoe KimDaeGeonOTF Light.otf;);
+  font-family: solm;
+} */
 
 :root {
   --primary: #ffb400;

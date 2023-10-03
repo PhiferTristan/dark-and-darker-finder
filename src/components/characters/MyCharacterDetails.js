@@ -70,6 +70,7 @@ export const MyCharacterDetails = () => {
       <div className="details-container">
         <section className="my-character-details">
           {/* <header className="character-header">{user?.username}</header> */}
+          <img src={characterClass?.imgUrl} alt={characterClass?.class} className="class-img" />
           <div>
             <p className="character-info">Character Name: {character.name}</p>
             

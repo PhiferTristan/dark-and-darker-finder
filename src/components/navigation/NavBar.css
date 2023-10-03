@@ -12,11 +12,12 @@
   list-style-type: none;
   text-align: center;
   color: var(--primary);
+  font-size: 175%;
+  /* border: 1px solid black */
 }
 
 .navbar-link {
   text-decoration: none;
-  font-family: "Quicksand", sans-serif;
   letter-spacing: 1px;
 }
 
@@ -26,4 +27,9 @@
 
 .navbar-link:hover {
   color: var(--primary);
+}
+
+.logo-img {
+  width: 4rem;
+  height: 4rem
 }

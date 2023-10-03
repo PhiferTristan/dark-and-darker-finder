@@ -8,6 +8,7 @@
   margin-bottom: 1.5rem;
   box-shadow: 4px 4px 2px -2px rgba(0, 0, 0, 0.4);
   align-items: center;
+  font-size: 125%
 }
 
 .profile-header {
@@ -15,16 +16,16 @@
   justify-content: center;
   color: var(--primary);
   align-items: center;
+  font-size: 200%;
 }
 
 .user-info {
-    color: var(--primary);
-  font-family: "Roboto", sans-serif;
+  color: var(--primary);
   align-items: center;
   margin-bottom: rem;
 }
 
 .p-info {
-    margin-bottom: 4rem;
-    color: rgb(240, 239, 232);
+  margin-bottom: 4rem;
+  color: rgb(240, 239, 232);
 }

@@ -67,10 +67,11 @@ export const EditCharacter = () => {
 
   return (
     <>
-    <div>
+    <div className="form-container">
     <form className="character-form">
       <h2 className="form-header">Edit character</h2>
-      <fieldset>
+      <div className="fields-container">
+      <fieldset className="field-container">
         <div className="form-group">
           <label htmlFor="name">Name:</label>
           <input
@@ -87,7 +88,7 @@ export const EditCharacter = () => {
           />
         </div>
       </fieldset>
-      <fieldset>
+      <fieldset className="field-container">
         <div className="form-group">
           <div>Class:</div>
           <select
@@ -110,7 +111,7 @@ export const EditCharacter = () => {
           </select>
         </div>
       </fieldset>
-      <fieldset>
+      <fieldset className="field-container">
         <div className="form-group">
           <div>Level:</div>
           <select
@@ -134,7 +135,7 @@ export const EditCharacter = () => {
           </select>
         </div>
       </fieldset>
-      <fieldset>
+      <fieldset className="field-container">
         <div className="form-group">
           <div>Objective:</div>
           <select
@@ -157,9 +158,10 @@ export const EditCharacter = () => {
           </select>
         </div>
       </fieldset>
-      <button className="btn" onClick={handleSaveClick}>
+      <button className="save-btn" onClick={handleSaveClick}>
         Save Edits
       </button>
+      </div>
     </form>
     </div>
     </>
